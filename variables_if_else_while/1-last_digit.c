@@ -1,17 +1,19 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+*main - function checks random rumber positive or zero
+*
+*Return: Always 0.
+*/
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-    int a =0;
-    cha = n % 10;
+    char a = 0;
+    a = n % 10;
     if(a > 5)
     {
         printf("%d and is greater than 5", a);
