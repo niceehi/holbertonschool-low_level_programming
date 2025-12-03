@@ -1,30 +1,32 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/**
-*main - function checks random rumber positive or zero
-*
-*Return: Always 0.
-*/
+
+/* * main - Prints a text according number
+ *
+ * Return: Always (Success)
+ */
 int main(void)
 {
 	int n;
-
-	srand(time(0));
+    int last;
+    
+    srand(time(0));
 	n = rand() - RAND_MAX / 2;
-    char a = 0;
-    a = n % 10;
-    if(a > 5)
+    last = n % 10;
+
+	if(last > 5)
     {
-        printf("Last digit of %d is %d and is greater than 5\n",n ,a);
+        printf("Last digit of %d is %d and is 5\n", n, last);
     }
-    if (a == 0)
+    if(last == 0)
     {
-		printf("Last digit of %d is %d and is 0\n", n, last);
+        printf("Last digit of %d is %d and is 0\n", n, last);
     }
-    if((a < 6) && (a != 0))
+    if(last!=0 && last < 6)
     {
-        printf("Last digit of %d is %d and is less than 6 and not 0\n",n , a);
+        printf("Last digit of %d is %d less than 6 and not 0\n", n, last);
     }
+    
 	return (0);
 }
