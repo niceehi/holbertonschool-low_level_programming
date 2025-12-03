@@ -3,10 +3,11 @@
 #include <stdio.h>
 
 /* * 
-*main - Prints a text according number
+* main - print last digit in random number
  *
- * Return: Always (Success)
+ * Description: print last digit in random number
  *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
