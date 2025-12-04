@@ -1,25 +1,23 @@
-#include<stdio.h>
-/**
- * main - Prints the alphabetic in lower and upper case
- *
- * Return: Always (Success)
- */
+#include <stdio.h>
 
+/**
+ * main - Prints the alphabet in lowercase
+ *        except 'q' and 'e'
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    
-    char x = 'a';
+	char x = 'a';
 
-    while(x <= 'z')
-    {
-        if(x != 'q' && x != 'e')
-        {
-            putchar(x);   
-        }
-        x++;
-    }
+	while (x <= 'z')
+	{
+		if (x != 'q' && x != 'e')
+			putchar(x);
+		x++;
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return 0;
+	return (0);
 }
