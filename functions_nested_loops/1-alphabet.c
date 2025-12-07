@@ -5,11 +5,11 @@
  *
  * Return: void
  */
-int main(void)
+int print_alphabet(void)
 {
     char x;
     x = 'a';
-    
+
     while(x <='z')
     {
         _putchar(x);
