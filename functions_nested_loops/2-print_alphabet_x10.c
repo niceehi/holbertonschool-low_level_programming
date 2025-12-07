@@ -12,7 +12,7 @@ void print_alphabet_x10(void)
 
 	while (i < 10)
 	{
-		x = 'a'; // Сброс x на 'a' для каждой итерации
+		x = 'a'; 
 		
 		while (x <= 'z')
 		{
