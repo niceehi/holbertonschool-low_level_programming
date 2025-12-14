@@ -22,11 +22,7 @@ void puts_half(char *str)
     }
     else
     {
-        while(f>0)
-        {
-            n = ((k + 1) / 2);
-            f++;
-        }
+        n = ((k + 1) / 2);
     }
     _putchar('\n');
 }
