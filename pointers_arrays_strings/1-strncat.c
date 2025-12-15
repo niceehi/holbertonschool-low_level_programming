@@ -3,10 +3,6 @@
 
 /**
  * _strncat - concatenates at most n characters from src to dest
- * @dest: destination string
- * @src: source string
- * @n: maximum number of characters to copy from src
- *
  * Return: pointer to dest
  */
 char *_strncat(char *dest, char *src, int n)
@@ -25,5 +21,5 @@ char *_strncat(char *dest, char *src, int n)
 
     dest[k + i] = '\0';
 
-    return dest;
+    return (dest);
 }
