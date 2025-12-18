@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * @p: pointer to string
- * This function replaces certain letters in the string
+ * leet - converts a string to leetspeak
+ * @p: string to convert
+ *
+ * Return: pointer to the modified string
  */
 char *leet(char *p)
 {
