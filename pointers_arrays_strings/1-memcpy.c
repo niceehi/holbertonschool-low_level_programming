@@ -3,8 +3,7 @@
 /**
  * _memcpy - copies memory area.
  * @dest: pointer to the destination memory area.
- * @src: pointer to the source memory area.
- * 
+ * @src: pointer to the source memory area
  * Return: pointer to the destination memory area dest.
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
