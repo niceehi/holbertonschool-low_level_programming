@@ -1,13 +1,11 @@
-#include <stddef.h>
 #include "main.h"
+#include <stddef.h>
 
 /**
- * _strchr - Locates a character in a string.
- * @s: Pointer to the string to be searched.
- * @c: Character to locate.
+ * NULL - Represents a null pointer.
  *
- * Return: Pointer to the first occurrence of c in s,
- * or NULL if c is not found.
+ * Description: Used to indicate that a pointer does not point
+ * to any valid memory address.
  */
 char *_strchr(char *s, char c)
 {
@@ -16,11 +14,12 @@ char *_strchr(char *s, char c)
     while (s[k] != '\0')
     {
         if (s[k] == c)
-        {
             return (s + k);
-        }
         k++;
     }
+
+    if (c == '\0')
+        return (s + k);
 
     return NULL;
 }
