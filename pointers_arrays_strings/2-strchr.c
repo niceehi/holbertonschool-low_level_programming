@@ -2,24 +2,30 @@
 #include <stddef.h>
 
 /**
- * NULL - Represents a null pointer.
+ * _strchr - Locates a character in a string.
+ * @s: Pointer to the string.
+ * @c: Character to find.
  *
- * Description: Used to indicate that a pointer does not point
- * to any valid memory address.
+ * Return: Pointer to the first occurrence of c,
+ * or NULL if not found.
  */
 char *_strchr(char *s, char c)
 {
-    int k = 0;
+	int k = 0;
 
-    while (s[k] != '\0')
-    {
-        if (s[k] == c)
-            return (s + k);
-        k++;
-    }
+	while (s[k] != '\0')
+	{
+		if (s[k] == c)
+		{
+			return (s + k);
+		}
+		k++;
+	}
 
-    if (c == '\0')
-        return (s + k);
+	if (c == '\0')
+	{
+		return (s + k);
+	}
 
-    return NULL;
+	return (NULL);
 }
