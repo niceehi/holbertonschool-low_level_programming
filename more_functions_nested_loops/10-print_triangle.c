@@ -3,11 +3,9 @@
 /**
  * print_triangle - prints an inverted triangle, followed by a new line.
  * @size: The size of the triangle.
- * 
  * Description: This function prints an inverted right-aligned triangle
  * using the character `#`. If `size` is less than or equal to 0, it 
  * prints only a new line.
- * 
  * Return: Nothing.
  */
 void print_triangle(int size)
