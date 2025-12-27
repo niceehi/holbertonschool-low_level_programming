@@ -2,13 +2,15 @@
 
 /**
  * main - prints its name, followed by a new line.
- * @argc: number of arguments passed to the function.
- * @argv: argument vector, an array of strings (arguments).
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: always 0 (success).
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
+	(void)argc; /* Говорим компилятору, что argc не используется */
+
 	printf("%s\n", argv[0]);
 
 	return (0);
