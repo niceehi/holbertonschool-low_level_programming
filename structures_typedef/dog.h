@@ -1,3 +1,6 @@
+#ifndef DOG_H
+#define DOG_H
+
 /**
  * struct dog - a new struct defining a dog
  * @name: First member
@@ -5,8 +8,7 @@
  * @age: Third member
  * @owner: Fourth member
  *
- * Description: Longer description if needed, but for a simple struct
- * this short format is usually enough.
+ * Description: Longer description if needed
  */
 struct dog
 {
@@ -15,3 +17,5 @@ struct dog
 	float age;
 	char *owner;
 };
+
+#endif
