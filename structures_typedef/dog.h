@@ -7,8 +7,6 @@
  * @type: Second member
  * @age: Third member
  * @owner: Fourth member
- *
- * Description: Longer description if needed
  */
 struct dog
 {
