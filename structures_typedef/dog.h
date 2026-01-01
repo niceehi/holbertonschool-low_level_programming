@@ -3,12 +3,11 @@
 
 /**
  * struct dog - a new struct defining a dog
- * @name: First member
- * @type: Second member
- * @age: Third member
- * @owner: Fourth member
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  *
- * Description: Longer description if needed
+ * Description: Longer description of the struct dog
  */
 struct dog
 {
@@ -17,6 +16,9 @@ struct dog
 	char *owner;
 };
 
+/**
+ * dog_t - typedef for struct dog
+ */
 typedef struct dog dog_t;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
