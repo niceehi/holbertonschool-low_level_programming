@@ -2,9 +2,9 @@
 #define HOLBERTON_H_
 
 
-#include <unistd.h> //  write, read, close
-#include <fcntl.h>  // open, O_RDONLY
-#include <stdlib.h> // malloc, free
+#include <unistd.h> 
+#include <fcntl.h> 
+#include <stdlib.h> 
 
 ssize_t read_textfile(const char *filename, size_t letters);
 
