@@ -5,7 +5,6 @@
  * main - Copies the content of a file to another file
  * @argc: The number of arguments
  * @argv: An array of pointers to the arguments
- *
  * Return: 0 on success, or exits with 97, 98, 99, 100 on failure
  */
 int main(int argc, char *argv[])
