@@ -41,6 +41,8 @@ int main(int argc, char *arg[])
         if (w_status != r_status)
         {
             dprintf(2, "Error: Can't write to %s\n", arg[2]);
+            close(fd);
+            close(fd1);
             exit(99);
         }
     }
@@ -65,3 +67,4 @@ int main(int argc, char *arg[])
 
     return (0);
 }
+
