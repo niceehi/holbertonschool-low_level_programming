@@ -1,41 +1,69 @@
 #include "main.h"
-#include <unistd.h>
-#include <fcntl.h>
 
 /**
- * append_text_to_file - appends text at the end of a file
- * @filename: the name of the file
- * @text_content: the NULL terminated string to add at the end of the file
- *
- * Return: 1 on success and -1 on failure
+ * main - Copies the content of a file to another file
+ * @argc: The number of arguments
+ * @argv: An array of pointers to the arguments
+ * Return: 0 on success, or exits with 97, 98, 99, 100 on failure
  */
-int append_text_to_file(const char *filename, char *text_content)
+int main(int argc, char *argv[])
 {
-	int fd, len = 0;
-	ssize_t w_count;
+	int fd, fd1;
+	ssize_t w_status, r_status;
+	char buffer[1024];
 
-	if (filename == NULL)
-		return (-1);
-
-	fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd == -1)
-		return (-1);
-
-	if (text_content != NULL)
+	if (argc != 3)
 	{
-		while (text_content[len])
-			len++;
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
-		w_count = write(fd, text_content, len);
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 
-		if (w_count == -1)
+	fd1 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (fd1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		close(fd);
+		exit(99);
+	}
+
+	while ((r_status = read(fd, buffer, 1024)) > 0)
+	{
+		w_status = write(fd1, buffer, r_status);
+		if (w_status != r_status)
 		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fd);
-			return (-1);
+			close(fd1);
+			exit(99);
 		}
 	}
 
-	close(fd);
-	return (1);
-}
+	if (r_status == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(fd);
+		close(fd1);
+		exit(98);
+	}
 
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+
+	if (close(fd1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
+		exit(100);
+	}
+
+	return (0);
+}
